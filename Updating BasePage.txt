@@ -1,0 +1,15 @@
+Task: Front-end
+HomePage-Adding Title
+
+Please add the below code in this file: basepage.components.html
+(File Path: Client/src/partials/basepage/basepage.components.html)
+
+Code
+----
+
+
+<div class="container text-center">
+    <div class="jumbotron">
+      <h1 class="display-4">Welcome to {{ title }} - Survey Buzz</h1>
+    </div>
+  </div> 
