@@ -1,0 +1,40 @@
+
+<div class="container">
+  <div
+    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+  >
+    <h2 class="h2">Survey List</h2>
+  </div>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Survey ID</th>
+        <th scope="col">Survey Name</th>
+        <th scope="col">Survey Question</th>
+        <th scope="col">Survey Answer</th>
+        <th class="text-center" scope="col">Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let survey of Surveys; let i = index">
+        <td>{{ survey.Surveyid }}</td>
+        <td>{{ survey.Surveyname }}</td>
+        <td>{{ survey.SurveyQuestion }}</td>
+        <td>{{ survey.SurveyAnswer }}</td>
+        <td class="text-center">
+          <button
+            class="btn btn-sm btn-primary"
+            routerLink="/edit-survey/{{ survey._id }}"
+          >
+            Edit 
+          </button>&nbsp;
+          <button class="btn btn-sm btn-danger" (click)="delete(survey._id, i)">
+            Delete 
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

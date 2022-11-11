@@ -1,0 +1,11 @@
+Backend start 
+Node-Rest-API
+node .\index.js
+
+Front-end Start 
+Survey-Buzz
+ng serve
+
+http://localhost:4200/ **
+
+
