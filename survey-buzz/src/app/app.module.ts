@@ -15,6 +15,7 @@ import { MatCardModule } from '@angular/material/card';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BasepageComponent } from './components/basepage/basepage.component';
+import { HomeComponent } from './pages/home.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { BasepageComponent } from './components/basepage/basepage.component';
     SurveyListComponent,
     HeaderComponent,
     FooterComponent,
-    BasepageComponent
+    BasepageComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
