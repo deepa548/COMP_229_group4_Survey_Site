@@ -5,6 +5,8 @@ let express = require("express"),
   bodyParser = require("body-parser"),
   mongoDb = require("./database/db");
 
+const createError = require('http-errors');
+
 mongoose.connect(process.env.URI || mongoDb.db, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -16,6 +18,8 @@ mongoDB.once("open", () => {
   console.log("Database Connected!...");
 });
 
+// Express APIs
+const api = require("./routes/auth.routes");
 const surveyRoute = require("./routes/survey.routes");
 
 const app = express();
@@ -34,6 +38,7 @@ app.use(
 
 // API root
 app.use("/api", surveyRoute);
+app.use("/api", api);
 
 // PORT
 const port = process.env.PORT || 8000;
@@ -50,6 +55,13 @@ app.use((req, res, next) => {
 // Base Route
 app.get("/", (req, res) => {
   res.send("invaild endpoint");
+});
+
+// Express error handling
+app.use((req, res, next) => {
+  setImmediate(() => {
+    next(new Error("Something went wrong"));
+  });
 });
 
 app.get("*", (req, res) => {
