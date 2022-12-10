@@ -11,8 +11,8 @@
       <tr>
         <th scope="col">Survey ID</th>
         <th scope="col">Survey Name</th>
-        <th scope="col">Survey Question</th>
-        <th scope="col">Survey Answer</th>
+        <th scope="col">Survey Created Date</th>
+        <th scope="col">Survey Expiry Date</th>
         <th class="text-center" scope="col">Action</th>
       </tr>
     </thead>
@@ -21,9 +21,14 @@
       <tr *ngFor="let survey of Surveys; let i = index">
         <td>{{ survey.Surveyid }}</td>
         <td>{{ survey.Surveyname }}</td>
-        <td>{{ survey.SurveyQuestion }}</td>
-        <td>{{ survey.SurveyAnswer }}</td>
+        <td>{{ survey.CreatedDate }}</td>
+        <td>{{ survey.ExpiryDate }}</td>
         <td class="text-center">
+          <button
+          class="btn btn-sm btn-primary"
+          routerLink="/Surveyresponse/{{ survey._id }}"
+        >
+          Respond </button>&nbsp;
           <button
             class="btn btn-sm btn-primary"
             routerLink="/edit-survey/{{ survey._id }}"

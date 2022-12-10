@@ -30,8 +30,9 @@ export class SignupComponent implements OnInit {
     this.authService.signUp(this.signupForm.value).subscribe((res) => {
       if (res.result) {
         this.signupForm.reset();
+        window.alert('Registration Succesful!');
         this.router.navigate(['log-in']);
-      }
+      } 
     });
   }
 }

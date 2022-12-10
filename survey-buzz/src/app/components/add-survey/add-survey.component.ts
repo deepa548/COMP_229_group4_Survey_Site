@@ -19,8 +19,14 @@ export class AddSurveyComponent implements OnInit {
     this.surveyForm = this.formBuilder.group({
       Surveyid: [''],
       Surveyname: [''],
-      SurveyQuestion: [''],
-      SurveyAnswer: [''],
+      CreatedDate: [''],
+      ExpiryDate: [''],
+      SurveyQuestion1: [''],
+      SurveyAnswer1: [''],
+      SurveyQuestion2: [''],
+      SurveyAnswer2: [''],
+      SurveyQuestion3: [''],
+      SurveyAnswer3: [''],
     });
   }
 

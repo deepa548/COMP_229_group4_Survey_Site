@@ -8,10 +8,28 @@ let Surveys = new Schema(
       Surveyname: {
         type: String,
       },
-      SurveyQuestion: {
+      CreatedDate: {
         type: String,
       },
-      SurveyAnswer: {
+      ExpiryDate: {
+        type: String,
+      },
+      SurveyQuestion1: {
+        type: String,
+      },
+      SurveyAnswer1: {
+        type: String,
+      },
+      SurveyQuestion2: {
+        type: String,
+      },
+      SurveyAnswer2: {
+        type: String,
+      },
+      SurveyQuestion3: {
+        type: String,
+      },
+      SurveyAnswer3: {
         type: String,
       }
     },

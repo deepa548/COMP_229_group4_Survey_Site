@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from './../../shared/auth.service';
 
 @Component({
@@ -13,6 +13,7 @@ export class UserProfileComponent implements OnInit {
 
   constructor(
     public authService: AuthService,
+    private router: Router,
     private actRoute: ActivatedRoute
   ) {
     let id = this.actRoute.snapshot.paramMap.get('id');

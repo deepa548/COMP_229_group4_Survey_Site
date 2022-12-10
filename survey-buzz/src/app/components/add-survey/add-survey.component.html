@@ -7,6 +7,7 @@
           class="form-control"
           type="text"
           formControlName="Surveyid"
+          placeholder="1001"
           required
         />
       </div>
@@ -17,16 +18,37 @@
           class="form-control"
           type="text"
           formControlName="Surveyname"
+          placeholder="Course evaluation"
           required
         />
       </div>
 
       <div class="form-group">
-        <label>Survey Question</label>
+        <label>Created Date</label>
+        <input
+          class="form-control form-check-inline"
+          type="date"
+          formControlName="CreatedDate"
+          placeholder="01/01/2022"
+          required
+        />      
+        <label>Expiry Date</label>
+        <input
+          class="form-control form-check-inline"
+          type="date"
+          formControlName="ExpiryDate"
+          placeholder="02/01/2022"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Survey Question 1</label>
         <input
           class="form-control"
           type="text"
-          formControlName="SurveyQuestion"
+          formControlName="SurveyQuestion1"
+          placeholder="Overall, how would you rate the course? (Excellent, Good, Fair, Poor)"
           required
         />
       </div>
@@ -36,8 +58,50 @@
         <input
           class="form-control"
           type="text"
-          formControlName="SurveyAnswer"
+          formControlName="SurveyAnswer1"
+          placeholder="Fair"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Survey Question 2</label>
+        <input
+          class="form-control"
+          type="text"
+          formControlName="SurveyQuestion2"
+          placeholder="How useful were the course materials? (Extremely, Very, Somewhat, Not useful)"
           required
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Survey Answer</label>
+        <input
+          class="form-control"
+          type="text"
+          formControlName="SurveyAnswer2"
+          placeholder="Very"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Survey Question 3</label>
+        <input
+          class="form-control"
+          type="text"
+          formControlName="SurveyQuestion3"
+          placeholder="How clearly did your instructor explain the course materials?(Extremely, Very, Somewhat, Not clearly)"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Survey Answer</label>
+        <input
+          class="form-control"
+          type="text"
+          formControlName="SurveyAnswer3"
+          placeholder="Very"
         />
       </div>
 

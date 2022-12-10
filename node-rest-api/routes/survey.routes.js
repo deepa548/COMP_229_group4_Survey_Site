@@ -56,6 +56,23 @@ surveyRoute.route("/update-survey/:id").put((req, res, next) => {
   );
 });
 
+surveyRoute.route("/response-survey/:id").put((req, res, next) => {
+  Survey.findByIdAndUpdate(
+  req.params.id,
+  {
+    $set: req.body,
+  },
+  (error, data) => {
+    if (error) {
+      return next(error);
+      console.log(error);
+    } else {
+      res.json(data);
+      console.log("Survey updated successfully!");
+    }
+  }
+);
+});
 // Delete Survey
 surveyRoute.route("/delete-survey/:id").delete((req, res, next) => {
     Survey.findByIdAndRemove(req.params.id, (error, data) => {

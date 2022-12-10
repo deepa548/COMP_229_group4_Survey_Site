@@ -4,14 +4,15 @@ import { CrudService } from './../../service/crud.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
-  selector: 'app-survey-detail',
-  templateUrl: './survey-detail.component.html',
-  styleUrls: ['./survey-detail.component.css']
+  selector: 'app-surveyresponse',
+  templateUrl: './surveyresponse.component.html',
+  styleUrls: ['./surveyresponse.component.css']
 })
-export class SurveyDetailComponent implements OnInit {
+export class SurveyresponseComponent implements OnInit {
+
   getId: any;
   updateForm: FormGroup;
-
+  Surveys: any = [];
   constructor(
     public formBuilder: FormBuilder,
     private router: Router,
@@ -23,34 +24,25 @@ export class SurveyDetailComponent implements OnInit {
 
     this.crudService.GetSurvey(this.getId).subscribe((res) => {
       this.updateForm.setValue({
-        Surveyid: res['Surveyid'],
-        Surveyname: res['Surveyname'],
-        CreatedDate: res['CreatedDate'],
-        ExpiryDate: res['ExpiryDate'],
-        SurveyQuestion1: res['SurveyQuestion1'],
         SurveyAnswer1: res['SurveyAnswer1'],
-        SurveyQuestion2: res['SurveyQuestion2'],
         SurveyAnswer2: res['SurveyAnswer2'],
-        SurveyQuestion3: res['SurveyQuestion3'],
         SurveyAnswer3: res['SurveyAnswer3'],
       });
     });
 
     this.updateForm = this.formBuilder.group({
-      Surveyid: [''],
-      Surveyname: [''],
-      CreatedDate: [''],
-      ExpiryDate: [''],
-      SurveyQuestion1: [''],
       SurveyAnswer1: [''],
-      SurveyQuestion2: [''],
       SurveyAnswer2: [''],
-      SurveyQuestion3: [''],
       SurveyAnswer3: [''],
     });
   }
 
-  ngOnInit() {}
+  ngOnInit(): void {
+    this.crudService.GetSurveys().subscribe((res) => {
+      console.log(res);
+      this.Surveys = res;
+    });
+  }
 
   onUpdate(): any {
     this.crudService.updateSurvey(this.getId, this.updateForm.value).subscribe(
